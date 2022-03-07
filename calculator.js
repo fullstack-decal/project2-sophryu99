@@ -57,7 +57,9 @@ function makesSymbol(symbol) {
     }
 
     else if (symbol == '=') {
+        // If there was no prev operator
         if (operator == null) {
+            strbuffer = '0'
             return;
         }
         calculations()
@@ -86,9 +88,8 @@ function makesSymbol(symbol) {
 // Setting up Listner
 function setListeners() {
     //Hint: We want to select all buttons from html and make it so that something happens when you click on the buttons! querySelectorAll might be helpful
-    let qs = document.getElementsByClassName("buttons"); 
-    console.log(qs);
-    for (item of qs) {
+    let input = document.getElementsByClassName("buttons"); 
+    for (item of input) {
         //Hint: addEventListener might be useful.
         //Hint: event.target.innerText might be helpful. innerText return type is a string
         item.addEventListener("click", function(event) {
